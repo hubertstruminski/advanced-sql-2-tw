@@ -1,0 +1,16 @@
+Tickets - id, customer_id, flights_id, seat_id, gates_id, class_id
+Flights - id, offers_id, time_departure, time_arrival, data, flight_duration, delays_id, gates_id
+
+Employers - id, profession, name, surname, email, sex, street, city, country, phone_number, customers_id (NULL)
+Customers - id, name, surname, email, sex, street, city, country, phone_number
+
+Offers - id, city_from, city_to, cost
+
+Services - id, planes_id, cost
+
+Gates - id, number, planes_id
+Planes - id, name, seats_id(list)
+Seats - id, number, classes_id
+
+Classes - id, name
+Delays - id, name
