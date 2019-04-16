@@ -66,17 +66,16 @@ CREATE TABLE employers (
 	street VARCHAR(120) NOT NULL,
 	city VARCHAR(150) NOT NULL,
 	country VARCHAR(150) NOT NULL,
-	phone_number VARCHAR(30) NOT NULL,
-	customers_id integer REFERENCES customers(id)
+	phone_number VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE flights (
-	id integer UNIQUE PRIMARY KEY,
+	id in teger UNIQUE PRIMARY KEY,
 	offers_id integer REFERENCES offers(id),
 	time_departure TIME NOT NULL,
 	time_arrival TIME NOT NULL,
 	data DATE NOT NULL,
-	flight_duration TIME NOT NULL,
+	flight_duration integer NOT NULL,
 	delays_id integer REFERENCES delays(id),
 	gates_id integer REFERENCES gates(id)
 );
