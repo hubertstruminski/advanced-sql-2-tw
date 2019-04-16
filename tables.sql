@@ -91,3 +91,27 @@ CREATE TABLE tickets (
 );
 
 
+CREATE SEQUENCE delays_id_seq;
+ALTER TABLE delays ALTER id SET DEFAULT NEXTVAL('delays_id_seq');
+CREATE SEQUENCE classes_id_seq;
+ALTER TABLE classes ALTER id SET DEFAULT NEXTVAL('classes_id_seq');
+CREATE SEQUENCE seats_id_seq;
+ALTER TABLE seats ALTER id SET DEFAULT NEXTVAL('seats_id_seq');
+CREATE SEQUENCE planes_id_seq;
+ALTER TABLE planes ALTER id SET DEFAULT NEXTVAL('planes_id_seq');
+CREATE SEQUENCE pleans_seats_id_seq;
+ALTER TABLE planes_seats ALTER id SET DEFAULT NEXTVAL('pleans_seats_id_seq');
+CREATE SEQUENCE gates_id_seq;
+ALTER TABLE gates ALTER id SET DEFAULT NEXTVAL('gates_id_seq');
+CREATE SEQUENCE services_id_seq;
+ALTER TABLE services ALTER id SET DEFAULT NEXTVAL('services_id_seq');
+CREATE SEQUENCE offers_id_seq;
+ALTER TABLE offers ALTER id SET DEFAULT NEXTVAL('offers_id_seq');
+CREATE SEQUENCE customers_id_seq;
+ALTER TABLE customers ALTER id SET DEFAULT NEXTVAL('customers_id_seq');
+CREATE SEQUENCE employers_id_seq;
+ALTER TABLE employers ALTER id SET DEFAULT NEXTVAL('employers_id_seq');
+CREATE SEQUENCE flights_id_seq;
+ALTER TABLE flights ALTER id SET DEFAULT NEXTVAL('flights_id_seq');
+CREATE SEQUENCE tickets_id_seq;
+ALTER TABLE tickets ALTER id SET DEFAULT NEXTVAL('tickets_id_seq');
