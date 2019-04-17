@@ -1,22 +1,22 @@
 CREATE TABLE delays (
 	id integer UNIQUE PRIMARY KEY,
-	name VARCHAR(15) NOT NULL
+	name VARCHAR(15)
 );
 
 CREATE TABLE classes (
 	id integer UNIQUE PRIMARY KEY,
-	name VARCHAR(20) NOT NULL
+	name VARCHAR(20)
 );
 
 CREATE TABLE seats (
 	id integer UNIQUE PRIMARY KEY,
-	number_place integer NOT NULL,
+	number_place integer,
 	classes_id integer REFERENCES classes(id) ON DELETE CASCADE
 );
 
 CREATE TABLE planes (
 	id integer UNIQUE PRIMARY KEY,
-	name VARCHAR(60) NOT NULL
+	name VARCHAR(60)
 );
 
 CREATE TABLE planes_seats (
@@ -27,55 +27,55 @@ CREATE TABLE planes_seats (
 
 CREATE TABLE gates (
 	id integer UNIQUE PRIMARY KEY,
-	number_gate integer NOT NULL,
+	number_gate integer,
 	planes_id integer REFERENCES planes(id) ON DELETE CASCADE
 );
 
 CREATE TABLE services (
 	id integer UNIQUE PRIMARY KEY,
-	cost integer NOT NULL,
+	cost integer,
 	planes_id integer REFERENCES planes(id) ON DELETE CASCADE
 );
 
 CREATE TABLE offers (
 	id integer UNIQUE PRIMARY KEY,
-	city_from VARCHAR(150) NOT NULL,
-	city_to VARCHAR(150) NOT NULL,
-	cost integer NOT NULL
+	city_from VARCHAR(150),
+	city_to VARCHAR(150),
+	cost integer
 );
 
 CREATE TABLE customers (
 	id integer UNIQUE PRIMARY KEY,
-	name VARCHAR(60) NOT NULL,
-	surname VARCHAR(150) NOT NULL,
-	email VARCHAR(100) NOT NULL,
-	sex VARCHAR(15) NOT NULL,
-	street VARCHAR(120) NOT NULL,
-	city VARCHAR(150) NOT NULL,
-	country VARCHAR(150) NOT NULL,
-	phone_number VARCHAR(30) NOT NULL
+	name VARCHAR(60),
+	surname VARCHAR(150),
+	email VARCHAR(100),
+	sex VARCHAR(15),
+	street VARCHAR(120),
+	city VARCHAR(150),
+	country VARCHAR(150),
+	phone_number VARCHAR(30)
 );
 
 CREATE TABLE employers (
 	id integer UNIQUE PRIMARY KEY,
-	profession VARCHAR(60) NOT NULL,
-	name VARCHAR(60) NOT NULL,
-	surname VARCHAR(150) NOT NULL,
-	email VARCHAR(100) NOT NULL,
-	sex VARCHAR(15) NOT NULL,
-	street VARCHAR(120) NOT NULL,
-	city VARCHAR(150) NOT NULL,
-	country VARCHAR(150) NOT NULL,
-	phone_number VARCHAR(30) NOT NULL
+	profession VARCHAR(60),
+	name VARCHAR(60),
+	surname VARCHAR(150),
+	email VARCHAR(100),
+	sex VARCHAR(15),
+	street VARCHAR(120),
+	city VARCHAR(150),
+	country VARCHAR(150),
+	phone_number VARCHAR(30)
 );
 
 CREATE TABLE flights (
 	id integer UNIQUE PRIMARY KEY,
 	offers_id integer REFERENCES offers(id) ON DELETE CASCADE,
-	time_departure TIME NOT NULL,
-	time_arrival TIME NOT NULL,
-	data DATE NOT NULL,
-	flight_duration integer NOT NULL,
+	time_departure TIME,
+	time_arrival TIME,
+	data DATE,
+	flight_duration integer,
 	delays_id integer REFERENCES delays(id) ON DELETE CASCADE,
 	gates_id integer REFERENCES gates(id) ON DELETE CASCADE
 );

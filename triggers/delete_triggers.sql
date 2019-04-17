@@ -1,0 +1,32 @@
+CREATE TRIGGER classes_trigger
+AFTER DELETE ON classes 
+FOR EACH ROW EXECUTE PROCEDURE classes_delete();
+
+CREATE TRIGGER customers_trigger
+AFTER DELETE ON customers
+FOR EACH ROW EXECUTE PROCEDURE customers_delete();
+
+CREATE TRIGGER delays_trigger
+AFTER DELETE ON delays 
+FOR EACH ROW EXECUTE PROCEDURE delays_delete();
+
+CREATE TRIGGER flights_trigger
+AFTER DELETE ON flights 
+FOR EACH ROW EXECUTE PROCEDURE flights_delete();
+
+CREATE TRIGGER gates_trigger
+AFTER DELETE ON gates 
+FOR EACH ROW EXECUTE PROCEDURE gates_delete();
+
+CREATE TRIGGER offers_trigger
+AFTER DELETE ON offers
+FOR EACH ROW EXECUTE PROCEDURE offers_delete();
+
+CREATE TRIGGER planes_trigger
+AFTER DELETE ON planes
+FOR EACH ROW EXECUTE PROCEDURE planes_delete();
+
+CREATE TRIGGER seats_trigger
+AFTER DELETE ON seats 
+FOR EACH ROW EXECUTE PROCEDURE seats_delete();
+
